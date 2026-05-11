@@ -92,21 +92,16 @@ class _HomeState extends State<Home> {
                       itemCount: product.length,
                       itemBuilder: (context, index) {
                         final item = product[index];
-                        final review = product[index].reviews[index];
-                        final tag = product[index].tags[index];
-                        final image = product[index].images[index];
-                        return item.category == "beauty"
-                            ? ListTile(
-                                leading: Image.network(
-                                  item.thumbnail,
-                                  width: 50,
-                                  fit: BoxFit.cover,
-                                ),
-                                title: Text(item.title),
-                                subtitle: Text(item.availabilityStatus),
-                                trailing: Text("\$${item.price}"),
-                              )
-                            : Container();
+                        return ListTile(
+                          leading: Image.network(
+                            item.thumbnail,
+                            width: 50,
+                            fit: BoxFit.cover,
+                          ),
+                          title: Text(item.title),
+                          subtitle: Text(item.availabilityStatus),
+                          trailing: Text("\$${item.price}"),
+                        );
                       },
                     ),
                   ),
